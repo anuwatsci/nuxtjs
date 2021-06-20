@@ -1,28 +1,11 @@
 <template>
   <div class="container">
-    <div>
-      <Logo />
-      <h1 class="title">
+    <div> 
+      <Logo /> 
+      <h4 class="title">
         casino-test
-      </h1>
-      <div class="links">
-        <a
-          href="https://nuxtjs.org/"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button--green"
-        >
-          Documentation
-        </a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button--grey"
-        >
-          GitHub
-        </a>
-      </div>
+      </h4>
+      <div class="links">  </div>
     </div>
   </div>
 </template>
@@ -54,7 +37,7 @@ export default {}
     sans-serif;
   display: block;
   font-weight: 300;
-  font-size: 100px;
+  font-size: 30px;
   color: #35495e;
   letter-spacing: 1px;
 }
