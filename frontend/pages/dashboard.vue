@@ -53,17 +53,18 @@ export default {
     this.user.id = this.$cookies.get('userState')
     if (this.user.id !== null) {
       this.checkbalace()
-      this.getlink(6)
     }
   },
   methods: {
     async deposit () {
+      this.show = false
       await this.$axios.post('/users/doposit', this.user).then(function (res) {
         // console.log(res)
       })
       this.checkbalace() 
     },
     async withdraw () {
+      this.show = false
       await this.$axios.post('/users/withdraw', this.user).then(function (res) {
         // console.log(res)
       })
@@ -77,7 +78,7 @@ export default {
       }
       this.user.deposit_amount = 0
       this.user.withdraw_amount = 0
-   
+      this.getlink(6)
     },
     async getgame () {
       const game = await this.$axios.get('/games/' + this.user.id).then(res => res.data)
