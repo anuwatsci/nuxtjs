@@ -16,7 +16,7 @@
                 </div>
               </div>
               <b-button type="button" variant="primary" @click="signin">Login</b-button>
-              <b-button type="reset" variant="info" @click="register">Signup</b-button>  
+              <b-button type="button" variant="info" @click="register">Signup</b-button>  
     </b-form> 
   </div>
 </template> 

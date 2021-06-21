@@ -17,8 +17,12 @@
              <b-form-input  type="number" v-model="user.withdraw_amount" ></b-form-input>
              <b-button type="button" variant="primary" @click="withdraw" >ถอน</b-button>
         </b-form> 
-
+        <b-form inline style="margin-top:10px;"> 
          <a :href="this.linkgame"  v-if="this.show" ><img src="~/assets/img/sa-gaming.png" width="100"  alt=""></a>
+        </b-form>
+        <b-form inline style="margin-top:10px;">
+          <b-button type="button" variant="info" @click="logout">ออกจากระบบ</b-button>  
+        </b-form>
       </div>
     </div>
   </div>
@@ -84,8 +88,11 @@ export default {
       const link = await this.$axios.post('/games/urlgame', this.user).then(res => res.data)
       this.linkgame = link
       this.show = true
-      // console.log(this.linkgame)
-    }
+    }, 
+    logout () {
+      this.$cookies.remove('userState')
+      this.$router.push('/')
+    },
   }
 }
 </script>
