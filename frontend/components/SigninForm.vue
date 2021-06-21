@@ -15,8 +15,8 @@
                   <h4 class="text-danger">{{response}}</h4>
                 </div>
               </div>
-              <b-button type="button" variant="primary" @click="signin">Submit</b-button>
-              <b-button type="reset" variant="danger">Reset</b-button>  
+              <b-button type="button" variant="primary" @click="signin">Login</b-button>
+              <b-button type="reset" variant="info" @click="register">Signup</b-button>  
     </b-form> 
   </div>
 </template> 
@@ -50,7 +50,16 @@
           this.response = 'กำลังไปหน้า dashboard....'
           this.$router.push('/dashboard')
         }
-      } 
+      },
+      async register () {
+      const resstr = await this.$axios.post('/users', this.user).then(res => res.data)
+      if (resstr.status === 'true') {
+        this.signin()
+        this.response = resstr.text
+      } else {
+        this.response = resstr.text
+      }
+    }, 
     }
   }
 </script>
