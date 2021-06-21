@@ -33,10 +33,13 @@ export default {
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
     // https://go.nuxtjs.dev/bootstrap
-    'bootstrap-vue/nuxt',
+    'bootstrap-vue/nuxt','@nuxtjs/axios','cookie-universal-nuxt',
   ],
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
-  }
+  },
+  axios: {
+    baseURL: 'http://localhost:8080', // Used as fallback if no runtime config is provided
+  },
 }

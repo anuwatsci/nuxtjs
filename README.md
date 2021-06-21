@@ -1,8 +1,5 @@
 # nuxtjs
-nuxtjs
-
-
-
+nuxtjs 
 # casino-test
 
 ## Build Setup

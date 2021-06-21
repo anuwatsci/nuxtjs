@@ -1,17 +1,19 @@
 <template>
   <div class="container">
-    <div> 
-      <Logo /> 
+    <div>  
+    <Logo />  
       <h4 class="title">
         casino-test
       </h4>
-      <div class="links">  </div>
+      <div class="link">  
+           <SigninForm />  
+      </div>
     </div>
   </div>
 </template>
 
 <script>
-export default {}
+export default { }
 </script>
 
 <style>
@@ -50,7 +52,7 @@ export default {}
   padding-bottom: 15px;
 }
 
-.links {
+.link {
   padding-top: 15px;
 }
 </style>
