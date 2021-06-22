@@ -6,23 +6,25 @@
         casino-test
       </h4>
       <div class="link">
-        <label>Balance {{user.balance}} THB.</label>
-        <b-form inline>
-             <label>จำนวนเงิน:</label>
-             <b-form-input  type="number"  v-model="user.deposit_amount" ></b-form-input>
-             <b-button type="button" variant="primary" @click="deposit" >ฝาก</b-button>
-        </b-form>
-        <b-form inline style="margin-top:10px;">
-             <label>จำนวนเงิน:</label>
-             <b-form-input  type="number" v-model="user.withdraw_amount" ></b-form-input>
-             <b-button type="button" variant="primary" @click="withdraw" >ถอน</b-button>
-        </b-form> 
-        <b-form inline style="margin-top:10px;"> 
-         <a :href="this.linkgame"  v-if="this.show" ><img src="~/assets/img/sa-gaming.png" width="100"  alt=""></a>
-        </b-form>
-        <b-form inline style="margin-top:10px;">
-          <b-button type="button" variant="info" @click="logout">ออกจากระบบ</b-button>  
-        </b-form>
+        <b-overlay :show="show" rounded="sm">
+          <label>Balance {{user.balance}} THB.</label>
+          <b-form inline>
+            <label>จำนวนเงิน:</label>
+            <b-form-input type="number" v-model="user.deposit_amount"></b-form-input>
+            <b-button type="button" variant="primary" @click="deposit">ฝาก</b-button>
+          </b-form>
+          <b-form inline style="margin-top:10px;">
+            <label>จำนวนเงิน:</label>
+            <b-form-input type="number" v-model="user.withdraw_amount"></b-form-input>
+            <b-button type="button" variant="primary" @click="withdraw">ถอน</b-button>
+          </b-form>
+          <b-form inline style="margin-top:10px;">
+            <a :href="this.linkgame" v-if="this.show"><img src="~/assets/img/sa-gaming.png" width="100" alt=""></a>
+          </b-form>
+          <b-form inline style="margin-top:10px;">
+            <b-button type="button" variant="info" @click="logout">ออกจากระบบ</b-button>
+          </b-form>
+        </b-overlay>
       </div>
     </div>
   </div>
