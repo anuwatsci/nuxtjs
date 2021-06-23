@@ -1,12 +1,12 @@
 <template>
   <div class="container">
-    <div>  
-    <Logo />  
-      <h4 class="title">
-        casino-test
-      </h4>
-      <div class="link">
-        <b-overlay :show="loading" rounded="sm">
+    <b-overlay :show="loading" rounded="sm">
+      <div>
+        <Logo />
+        <h4 class="title">
+          casino-test
+        </h4>
+        <div class="link">
           <label>Balance {{user.balance}} THB.</label>
           <b-form inline>
             <label>จำนวนเงิน:</label>
@@ -24,10 +24,10 @@
           <b-form inline style="margin-top:10px;">
             <b-button type="button" variant="info" @click="logout">ออกจากระบบ</b-button>
           </b-form>
-        </b-overlay>
+        </div>
       </div>
+    </b-overlay>
     </div>
-  </div>
 </template>
 
 <script>
