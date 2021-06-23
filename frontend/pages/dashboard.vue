@@ -6,7 +6,7 @@
         casino-test
       </h4>
       <div class="link">
-        <b-overlay :show="show" rounded="sm">
+        <b-overlay :show="loading" rounded="sm">
           <label>Balance {{user.balance}} THB.</label>
           <b-form inline>
             <label>จำนวนเงิน:</label>
@@ -48,7 +48,8 @@ export default {
       },
       games: [{}],
       linkgame: '',
-      show:false
+      show:false,
+      loading:false
     }
   },
   mounted () {
@@ -60,6 +61,7 @@ export default {
   methods: {
     async deposit () {
       this.show = false
+      this.loading = true
       await this.$axios.post('/users/doposit', this.user).then(function (res) {
         // console.log(res)
       })
@@ -67,6 +69,7 @@ export default {
     },
     async withdraw () {
       this.show = false
+       this.loading = true
       await this.$axios.post('/users/withdraw', this.user).then(function (res) {
         // console.log(res)
       })
@@ -91,6 +94,7 @@ export default {
       const link = await this.$axios.post('/games/urlgame', this.user).then(res => res.data)
       this.linkgame = link
       this.show = true
+      this.loading = false
     }, 
     logout () {
       this.$cookies.remove('userState')
